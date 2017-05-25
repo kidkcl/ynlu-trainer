@@ -1,7 +1,7 @@
 ## How to Run
 
 ```
-python addTrain.py
+python trainer.py
 ```
 
 ## Description
