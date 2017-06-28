@@ -39,7 +39,9 @@ def main():
         if utterance == 'train_stop':
             break
         result = client.predict(utterance)
-        pprint(result)
+        # pprint(result)
+        rank_result = sorted(result, key='score')
+        pprint(rank_result)
         case = input(">>> Is the result correct? Yes(1) No(2)")
         if int(case) == 2:
             match = input(">>> Enter the intent this utterance should match to: ")
