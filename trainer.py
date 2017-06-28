@@ -40,7 +40,7 @@ def main():
             break
         result = client.predict(utterance)
         # pprint(result)
-        rank_result = sorted(result, key='score')
+        rank_result = sorted(result, key=lambda x: x['score'])
         pprint(rank_result)
         case = input(">>> Is the result correct? Yes(1) No(2)")
         if int(case) == 2:
@@ -53,7 +53,7 @@ def main():
             print("Training...")
             while True:
                 if not client.classifier_is_traning():
-                    break        
+                    break
                 time.sleep(3)
         else:
             pass
